@@ -1,4 +1,4 @@
-function CreateGrid16() {
+function createGrid16() {
     const container = document.querySelector('.container');
 
     for (let i = 0; i < 16; i++) {
@@ -9,3 +9,16 @@ function CreateGrid16() {
         }
     }
 }
+
+createGrid16();
+
+function addHoverEffect() {
+    const cells = document.querySelectorAll('.cell');
+    cells.forEach(cell => {
+        cell.addEventListener('mouseenter', function() {
+            cell.classList.add('changeColor');
+        })
+    })
+}
+
+addHoverEffect();
