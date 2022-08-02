@@ -1,0 +1,22 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    margin: 8px;
+    padding: 8px;
+    display: grid;
+    grid-template-rows: repeat(16, 1fr);
+    grid-template-columns: repeat(16, 1fr);
+    background-color: bisque;
+    width: 500px;
+    height: 500px;
+}
+
+.container .cell {
+    margin: 0;
+    padding: 0;
+}
+
