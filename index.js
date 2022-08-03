@@ -12,12 +12,22 @@ function createGrid16() {
 
 createGrid16();
 
+let mouseDown = false;
+document.body.onmousedown = () => mouseDown = true;
+document.body.onmouseup = () => mouseDown = false;
+
+function changeColor(e) {
+    if ((e.type === 'mouseover' && mouseDown) || e.type === 'click') {
+        e.target.style.backgroundColor = 'red';
+    }
+}
+
 function addHoverEffect() {
     const cells = document.querySelectorAll('.cell');
     cells.forEach(cell => {
-        cell.addEventListener('mouseenter', function() {
-            cell.classList.add('changeColor');
-        })
+        cell.addEventListener('mouseover', changeColor);
+        cell.addEventListener('mousedown', changeColor);
+        cell.addEventListener('click', changeColor);
     })
 }
 
